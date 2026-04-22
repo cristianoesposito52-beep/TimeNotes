@@ -485,6 +485,58 @@
     }
     .download-meta span { padding: 0 8px; }
 
+    .install-steps {
+      position:relative; margin-top:clamp(40px, 6vw, 60px);
+      max-width:880px; margin-left:auto; margin-right:auto;
+      padding: 0 var(--container-px);
+    }
+    .install-steps-title {
+      color:var(--azzurro); font-size:clamp(1rem, 2.2vw, 1.15rem);
+      font-weight:700; margin-bottom:22px; letter-spacing:.3px;
+    }
+    .install-steps-grid {
+      display:grid; gap:14px;
+      grid-template-columns:1fr;
+    }
+    @media (min-width: 720px) {
+      .install-steps-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .install-step {
+      background:rgba(174,214,241,.06);
+      border:1px solid rgba(174,214,241,.14);
+      border-radius:14px; padding:20px 18px;
+      text-align:left; transition:all .25s ease;
+    }
+    .install-step:hover {
+      background:rgba(174,214,241,.09);
+      border-color:rgba(174,214,241,.25);
+      transform:translateY(-2px);
+    }
+    .install-step-num {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:32px; height:32px; border-radius:50%;
+      background:var(--blue); color:white;
+      font-weight:900; font-size:.95rem;
+      margin-bottom:12px;
+    }
+    .install-step-title {
+      color:var(--azzurro); font-weight:800;
+      font-size:.95rem; margin-bottom:6px;
+    }
+    .install-step-desc {
+      color:var(--azzurro-2); opacity:.78;
+      font-size:.82rem; line-height:1.55;
+    }
+    .install-note {
+      margin-top:22px; padding:14px 18px;
+      background:rgba(243,156,18,.08);
+      border:1px solid rgba(243,156,18,.25);
+      border-radius:10px;
+      color:var(--azzurro-2); font-size:.78rem; line-height:1.55;
+      max-width:720px; margin-left:auto; margin-right:auto;
+    }
+    .install-note strong { color:var(--pro-gold); }
+
     /* ════════════════════════════════════════════
        FOOTER
        ════════════════════════════════════════════ */
@@ -576,8 +628,8 @@
           <div class="hero-stat-lbl">Categorie di ore</div>
         </div>
         <div class="hero-stat-item">
-          <div class="hero-stat-num">0</div>
-          <div class="hero-stat-lbl">Installazione richiesta</div>
+          <div class="hero-stat-num">1 min</div>
+          <div class="hero-stat-lbl">Setup guidato</div>
         </div>
         <div class="hero-stat-item">
           <div class="hero-stat-num">100%</div>
@@ -814,7 +866,7 @@
      ════════════════════════════════════════════ -->
 <section class="download-section" id="download">
   <h2 class="reveal">Pronto a tracciare il tuo tempo?</h2>
-  <p class="reveal reveal-delay-1">Un singolo eseguibile Windows, nessuna installazione richiesta. I tuoi dati restano sul tuo computer.</p>
+  <p class="reveal reveal-delay-1">Scarica il programma di installazione ufficiale per Windows. Setup guidato in meno di un minuto — i tuoi dati restano sempre e solo sul tuo computer.</p>
 
   <a href="https://github.com/cristianoesposito52-beep/TimeNotes/releases/latest/download/TimeNotes_Setup_v2.1.exe"
      class="btn-download-main reveal reveal-delay-2"
@@ -825,14 +877,45 @@
       <polyline points="7 10 12 15 17 10"/>
       <line x1="12" y1="15" x2="12" y2="3"/>
     </svg>
-    Scarica TimeNotes.exe
+    Scarica il Setup di TimeNotes
   </a>
 
   <div class="download-meta reveal reveal-delay-3">
     <span>Windows 10 / 11</span><span>·</span>
-    <span>Nessuna installazione</span><span>·</span>
+    <span>Setup guidato</span><span>·</span>
     <span>SQLite locale</span><span>·</span>
     <span>v2.1</span>
+  </div>
+
+  <div class="install-steps reveal reveal-delay-3">
+    <div class="install-steps-title">Come installare TimeNotes in 3 passaggi</div>
+    <div class="install-steps-grid">
+      <div class="install-step">
+        <div class="install-step-num">1</div>
+        <div class="install-step-title">Scarica il Setup</div>
+        <div class="install-step-desc">
+          Clicca sul pulsante qui sopra. Il browser salva il file <code>TimeNotes_Setup_v2.1.exe</code> nella tua cartella Download.
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="install-step-num">2</div>
+        <div class="install-step-title">Avvia l'installazione</div>
+        <div class="install-step-desc">
+          Fai doppio clic sul file scaricato e segui la procedura guidata: scegli la cartella, crea il collegamento sul desktop e conferma.
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="install-step-num">3</div>
+        <div class="install-step-title">Apri TimeNotes</div>
+        <div class="install-step-desc">
+          Trovi l'icona sul desktop e nel menu Start. Al primo avvio parte la versione TRIAL di 30 giorni — nessun account richiesto.
+        </div>
+      </div>
+    </div>
+
+    <div class="install-note">
+      <strong>⚠️ Avviso di Windows al primo avvio:</strong> poiché il Setup non è firmato con un certificato commerciale, Windows SmartScreen potrebbe mostrare un avviso blu. Clicca su <strong>"Ulteriori informazioni" → "Esegui comunque"</strong> per proseguire. Il software è sicuro — il codice è pubblico su GitHub e verificabile.
+    </div>
   </div>
 </section>
 
