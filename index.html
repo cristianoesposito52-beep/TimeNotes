@@ -375,11 +375,12 @@
     /* KPI row — 3 columns on mobile, 6 on desktop */
     .kpi-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: clamp(6px, 1.5vw, 10px);
       margin-top: clamp(12px, 2vw, 18px);
     }
-    @media (min-width: 600px) { .kpi-row { grid-template-columns: repeat(6, 1fr); } }
+    @media (min-width: 500px) { .kpi-row { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 780px) { .kpi-row { grid-template-columns: repeat(7, 1fr); } }
 
     .kpi-chip { border-radius:9px; padding:clamp(8px, 1.5vw, 10px) clamp(8px, 1.5vw, 12px); border-width:2px; border-style:solid; }
     .kpi-chip-label { font-size:clamp(.58rem, 1.4vw, .65rem); font-weight:700; opacity:.8; }
@@ -1149,6 +1150,7 @@
       <div class="kpi-chip" style="background:var(--c-permessi-bg);border-color:var(--c-permessi-br);"><div class="kpi-chip-label" style="color:var(--c-permessi-txt);">PERMESSI</div><div class="kpi-chip-value">${fmt(kpi.permessi)}h</div></div>
       <div class="kpi-chip" style="background:var(--c-malattia-bg);border-color:var(--c-malattia-br);"><div class="kpi-chip-label" style="color:var(--c-malattia-txt);">MALATTIA</div><div class="kpi-chip-value">${fmt(kpi.malattia)}h</div></div>
       <div class="kpi-chip" style="background:var(--c-straord-bg);border-color:var(--c-straord-br);"><div class="kpi-chip-label" style="color:var(--c-straord-txt);">STRAORD.</div><div class="kpi-chip-value">${fmt(kpi.straord)}h</div></div>
+      <div class="kpi-chip" style="background:var(--c-festivo-bg);border-color:var(--c-festivo-br);"><div class="kpi-chip-label" style="color:var(--c-festivo-txt);">FESTIVO</div><div class="kpi-chip-value">${fmt(kpi.festivo)}h</div></div>
     `;
   }
 
