@@ -236,9 +236,16 @@
       transition: transform .45s ease;
     }
     .app-window:hover { transform: perspective(1000px) rotateY(0) rotateX(0); }
-    /* hide mock on phones — focus on text */
+    /* su mobile: mock sotto il testo, ridimensionato */
     @media (max-width: 899px) {
-      .app-window { display: none; }
+      .app-window {
+        width: 100%;
+        max-width: 480px;
+        margin: 32px auto 0;
+        transform: none !important;
+        overflow-x: auto;
+        font-size: 11px;
+      }
     }
 
     .win-titlebar {
@@ -809,8 +816,10 @@
   <h2 class="reveal">Pronto a tracciare il tuo tempo?</h2>
   <p class="reveal reveal-delay-1">Un singolo eseguibile Windows, nessuna installazione richiesta. I tuoi dati restano sul tuo computer.</p>
 
-  <a href="https://github.com/cristianoesposito52-beep/TimeNotes/releases/latest/download/TimeNotes.exe"
-     class="btn-download-main reveal reveal-delay-2">
+  <a href="https://github.com/cristianoesposito52-beep/TimeNotes/releases/latest/download/TimeNotes_Setup_v2.1.exe"
+     class="btn-download-main reveal reveal-delay-2"
+     download="TimeNotes_Setup_v2.1.exe"
+     rel="noopener">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
       <polyline points="7 10 12 15 17 10"/>
